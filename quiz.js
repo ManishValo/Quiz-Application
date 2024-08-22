@@ -1,11 +1,13 @@
 let details=JSON.parse(localStorage.getItem("details"));
 let quiz_user=JSON.parse(localStorage.getItem("quiz_user"))
-
+let body=document.querySelector("body")
 console.log(details,quiz_user);
 
 if(quiz_user){
-
-}
+    if(quiz_user.quiz){
+        body.innerHTML=`test Already submitted to see result <a href="./result.html">click here</a>`
+    }
+    }
 else{
     alert("Please Login First")
     window.location.href="./login.html"
