@@ -7,13 +7,16 @@ if(quiz_user){
     if(quiz_user.quiz){
         body.innerHTML=`test Already submitted to see result <a href="./result.html">click here</a>`
     }
+    else{
+        mainfunction()
+    }
     }
 else{
     alert("Please Login First")
     window.location.href="./login.html"
 }
 
-
+function mainfunction(){
 let storage = [
     {
         quesId: "1",
@@ -327,3 +330,4 @@ submitBtn.addEventListener("click",()=>{
     window.location.href="./result.html"
    }
 })
+}
