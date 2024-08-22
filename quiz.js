@@ -292,7 +292,17 @@ function timer() {
 
         if(duration==0){
             clearInterval(interval);
-            window.location.href="./result.html"
+            //^ for auto-submit
+                quiz_user.quiz=storage;
+                localStorage.setItem("quiz_user",JSON.stringify(quiz_user))
+                details=details.filter((e)=>{
+                    if(e.phone !=quiz_user.phone){
+                        return e
+                    }
+                })
+                details.push(quiz_user)
+                localStorage.setItem("details",JSON.stringify(details))
+                window.location.href="./result.html"
         }
 
     },1000);
